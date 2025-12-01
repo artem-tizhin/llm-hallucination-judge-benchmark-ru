@@ -11,7 +11,7 @@ load_dotenv()
 api_key = os.getenv("GROQ_API_KEY3")
 client = Groq(api_key=api_key)
 
-QWEN_MODEL_NAME = "qwen/qwen3-32b"
+LLAMA_MODEL_NAME = "openai/gpt-oss-20b"
 JUDGE_MODEL_NAME = "openai/gpt-oss-120b"
 
 
@@ -20,17 +20,17 @@ def main():
     answer_prompt = load_prompt("prompts/answer_prompt.txt")
     judge_prompt = load_prompt("prompts/judge_prompt.txt")
 
-    qwen_results = run_benchmark(
+    llama_results = run_benchmark(
         client=client,
-        model_name=QWEN_MODEL_NAME,
+        model_name=LLAMA_MODEL_NAME,
         judge_model_name=JUDGE_MODEL_NAME,
         questions=questions,
         answer_prompt=answer_prompt,
         judge_prompt=judge_prompt,
-        output_path="results/qwen_results.json",
+        output_path="results/gpt_20B_results.json",
     )
 
-    return qwen_results
+    return llama_results
 
 
 if __name__ == "__main__":

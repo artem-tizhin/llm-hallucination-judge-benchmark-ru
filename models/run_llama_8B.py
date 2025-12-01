@@ -8,7 +8,7 @@ from models.benchmark_runner import load_prompt, load_questions, run_benchmark
 
 load_dotenv()
 
-api_key = os.getenv("GROQ_API_KEY3")
+api_key = os.getenv("GROQ_API_KEY1_2")
 client = Groq(api_key=api_key)
 
 LLAMA_MODEL_NAME = "llama-3.1-8b-instant"

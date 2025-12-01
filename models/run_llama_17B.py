@@ -1,3 +1,4 @@
+
 import os
 
 from dotenv import load_dotenv
@@ -11,7 +12,7 @@ load_dotenv()
 api_key = os.getenv("GROQ_API_KEY3")
 client = Groq(api_key=api_key)
 
-QWEN_MODEL_NAME = "qwen/qwen3-32b"
+LAMMA_MODEL_NAME = "meta-llama/llama-4-scout-17b-16e-instruct"
 JUDGE_MODEL_NAME = "openai/gpt-oss-120b"
 
 
@@ -22,12 +23,12 @@ def main():
 
     qwen_results = run_benchmark(
         client=client,
-        model_name=QWEN_MODEL_NAME,
+        model_name=LAMMA_MODEL_NAME,
         judge_model_name=JUDGE_MODEL_NAME,
         questions=questions,
         answer_prompt=answer_prompt,
         judge_prompt=judge_prompt,
-        output_path="results/qwen_results.json",
+        output_path="results/llama_17B_results.json",
     )
 
     return qwen_results
