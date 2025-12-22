@@ -108,6 +108,7 @@
 
 ## Структура проекта
 
+```markdown
 llm-benchmark/
 ├── .vscode/                           # настройки VSCode
 │
@@ -156,7 +157,7 @@ llm-benchmark/
 ├── .gitignore
 ├── README.md                          # описание проекта
 └── requirements.txt                   # зависимости
-
+```
 
 ---
 
